@@ -21,6 +21,8 @@ class ViewController: UIViewController {
         }
         
         NotificationCenter.default.post(name: notification, object: nil)
+        //This is will cancel the subscriber
+        subscriber.cancel()
     }
 
 
