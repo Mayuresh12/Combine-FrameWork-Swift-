@@ -37,14 +37,10 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
 
 
+### Subjects are both Publisher and Subscribers
+ Here below is an example where we have creates String Subscriber then via subject on demand we can pass data via `PassthroughSubject` on demand.
+
 ```swift
-//
-//  ViewController.swift
-//  Hello-Subjects
-//
-//  Created by Mohammad Azam on 9/6/19.
-//  Copyright © 2019 Mohammad Azam. All rights reserved.
-//
 
 import UIKit
 import Combine
