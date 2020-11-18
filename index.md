@@ -135,7 +135,7 @@ Here are few transformational operators
 - replaceNil
 - replaceEmpty
 
-### 1. Collect
+1. Collect
 This will convert the give value into array. 
 For eg.
 ```swift
@@ -151,7 +151,7 @@ O/P:
 ```
 here the value `collect(2)` passed in 2 breaks the array into chunks of two. If no number is provided whole array is returned.
 
-### 2. Map
+2. Map
 
 ```swift
 import UIKit
@@ -168,7 +168,7 @@ formatter.numberStyle = .spellOut
 
 ```
 
-### 3. Map Keypath
+3. Map Keypath
 ```swift
 import UIKit
 import Combine
