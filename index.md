@@ -113,3 +113,10 @@ class ViewController: UIViewController {
 
 ### Type Eraser
 In Swift we can hide type behind a type is called a type eraser.
+
+for example
+
+```swift 
+ let publisher = PassthroughSubject<Int, Never>().eraseToAnyPublisher()
+```
+Here the publsher is `AnyPublisher` if any caller is trying to access the publisher it will not dislcose it is `PassThroughPublisher` but will dislcose as `AnyPublisher`
