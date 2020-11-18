@@ -168,9 +168,8 @@ formatter.numberStyle = .spellOut
 
 ```
 ```markdown
-
 3. Map Keypath
-```markdown
+```
 
 ```swift
 import UIKit
