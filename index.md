@@ -119,4 +119,71 @@ for example
 ```swift 
  let publisher = PassthroughSubject<Int, Never>().eraseToAnyPublisher()
 ```
-Here the publsher is `AnyPublisher` if any caller is trying to access the publisher it will not dislcose it is `PassThroughPublisher` but will dislcose as `AnyPublisher`
+Here the publisher is `AnyPublisher` if any caller is trying to access the publisher it will not dislcose it is `PassThroughPublisher` but will dislcose as `AnyPublisher`
+
+### Tranformational Operators
+The are the operators which transforms a sequence to completr another sequence.
+For eg.
+`[1,2,3]` here array of number when passed to transformational operator might yeild us `["One","Two","Three"]`
+
+Here are few transformational operators
+- scan
+- map
+- flatMap
+- map keypath
+- collect
+- replaceNil
+- replaceEmpty
+
+### 1. Collect
+This will convert the give value into array. 
+For eg.
+```swift
+["A","B","C","D","E"].publisher.collect(2).sink{
+    print($0)
+}
+```
+```
+O/P:
+["A", "B"]
+["C", "D"]
+["E"]
+```
+here the value `collect(2)` passed in 2 breaks the array into chunks of two. If no number is provided whole array is returned.
+
+### 2. Map
+
+```swift
+import UIKit
+import Combine
+
+let formatter = NumberFormatter()
+formatter.numberStyle = .spellOut
+
+[123,45,67].publisher.map {
+    formatter.string(from: NSNumber(integerLiteral: $0)) ?? ""
+}.sink {
+    print($0)
+}
+
+```
+
+### 3. Map Keypath
+```swift
+import UIKit
+import Combine
+struct Point {
+    let x: Int
+    let y: Int
+}
+
+let publisher = PassthroughSubject<Point, Never>()
+
+publisher.map(\.x, \.y).sink { x, y in
+    print("x is \(x) and y is \(y)")
+}
+
+publisher.send(Point(x: 2, y: 10))
+```
+
+
