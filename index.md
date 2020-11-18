@@ -110,3 +110,6 @@ class ViewController: UIViewController {
 
 
 ```
+
+### Type Eraser
+In Swift we can hide type behind a type is called a type eraser.
