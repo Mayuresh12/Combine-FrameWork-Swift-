@@ -149,8 +149,16 @@ publisher.map(\.x, \.y).sink { x, y in
 
 publisher.send(Point(x: 2, y: 10))
 ```
+### Filtering Operators
+```swift
+import UIKit
+import Combine
 
 
+let numbers = (1...20).publisher
+
+numbers.filter { $0 % 2 == 0 } .sink{ print( $0 )}
+```
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Mayuresh12/Combine-FrameWork-Swift-/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
