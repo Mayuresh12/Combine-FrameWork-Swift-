@@ -150,6 +150,7 @@ publisher.map(\.x, \.y).sink { x, y in
 publisher.send(Point(x: 2, y: 10))
 ```
 ### Filtering Operators
+
 ```swift
 import UIKit
 import Combine
